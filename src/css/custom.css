@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Telugu:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 212 100% 47%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.8rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Shadcn Style new-york - slate */
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Docusaurus color */
+    --prism-background-color: #edefff;
+    --ifm-background-color: hsl(0, 0%, 99%);
+    --ifm-footer-background-color: #fff;
+    --ifm-background-surface-color: #ffffff;
+    --ifm-footer-link-color: #333;
+    --ifm-code-font-size: 95%;
+    --ifm-h1-font-size: 2.5rem;
+    --docusaurus-highlighted-code-line-bg: #0000001a;
+    --ifm-global-shadow-tl: 2px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    --ifm-font-family-base: 'Montserrat', Roboto, Ubuntu, Cantarell, Noto Sans, system-ui,
+      -apple-system, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --menu-link-active: rgba(0, 0, 0, 0.1);
+    --ifm-menu-link-padding-vertical: 0.5rem;
+    --docs-fg-base: #030712;
+    --ifm-menu-color-active: var(--docs-fg-base);
+
+    /* Docsearch color */
+    --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+    --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff,
+      0 1px 2px 1px #1e235a66;
+    --docsearch-muted-color: #969faf;
+  }
+
+  html[data-theme='dark'] {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 212 100% 47%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+    /* Shadcn Style new-york - slate */
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Docusaurus color */
+    --prism-background-color: #12142c;
+    --khata-border: #ffffff;
+    --ifm-background-color: #000000;
+    --ifm-background-surface-color: #0c0c0e;
+    --ifm-footer-link-color: #dadde1;
+    --ifm-color-primary: #16ad8d;
+    --ifm-menu-color-background-active: #ffffff1a;
+    --menu-link-active: rgba(255, 255, 255, 0.1);
+    --ifm-menu-color-active: var(--ifm-color-primary);
+
+    /* Docsearch color */
+    --table-of-contents-color: #e8e8e8;
+    --docusaurus-highlighted-code-line-bg: #0000004d;
+    --docsearch-muted-color: #7f8497;
+    --docsearch-key-gradient: linear-gradient(-26.5deg, #565872, #31355b);
+    --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d,
+      0 2px 2px 0 #0304094d;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    font-family: 'Montserrat ', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3, button {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+  }
+
+  code,
+  pre {
+    font-family: 'Poppins', monospace;
+  }
+
+  body {
+    @apply text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    background-color: var(--ifm-background-color);
+  }
+
+  #root {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    padding: 2em;
+  }
+
+
+  @font-face {
+    font-family: 'Gautami';
+    src: url('../fonts/gautami.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: 0 solid hsl(var(--border));
+  }
+
+  html {
+    font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
+  }
+
+  a {
+    @apply hover:no-underline;
+  }
+}
+
+/* Custom glass morphism */
+.glass-panel {
+  @apply backdrop-blur-md border border-white/30 shadow-lg;
+  max-width: 100%;
+  background-color: var(--ifm-background-surface-color);
+  opacity: 0.8;
+}
+
+/* Container fix for preview */
+.container {
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Preview section specific fixes */
+.preview-section {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Set max width on tables to prevent overflow */
+table {
+  max-width: 100%;
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+  display: table;
+}
+
+/* Signature column width */
+/* .signature-col {
+  width: 80px;
+} */
+
+/* Table container to prevent horizontal scrolling */
+.table-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .khata-table th,
+  .khata-table td {
+    padding: 1px;
+    font-size: 0.85rem;
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* .khata-table th {
+    font-size: 0.85rem;
+  } */
+
+  /* .khata-table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+  } */
+
+  /* .signature-col {
+    width: 60px;
+  } */
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+
+  .khata-table th,
+  .khata-table td {
+    padding: 1px;
+    font-size: 0.7rem;
+  }
+
+  /* .signature-col {
+    width: 50px;
+  } */
+}
+
+/* Print-specific styles */
+@media print {
+
+  /* Force light theme colors when printing */
+  :root {
+    /* --background: 210 20% 98% !important;
+    --foreground: 224 71.4% 4.1% !important; */
+    --card: 0 0% 100% !important;
+    --card-foreground: 224 71.4% 4.1% !important;
+    --khata-border: #000000 !important;
+    /* --popover: 0 0% 100% !important;
+    --popover-foreground: 224 71.4% 4.1% !important;
+    --primary: 212 100% 47% !important;
+    --primary-foreground: 210 40% 98% !important;
+    --secondary: 210 20% 96% !important;
+    --secondary-foreground: 222.2 47.4% 11.2% !important; */
+
+    /* --muted: 210 40% 96.1% !important;
+    --muted-foreground: 215.4 16.3% 46.9% !important; */
+    /* --accent: 210 40% 96.1% !important;
+    --accent-foreground: 222.2 47.4% 11.2% !important;
+    --destructive: 0 84.2% 60.2% !important;
+    --destructive-foreground: 210 40% 98% !important;
+    --border: 214.3 31.8% 91.4% !important;
+    --input: 214.3 31.8% 91.4% !important;
+    --ring: 222.2 84% 4.9% !important; */
+
+    /* Force light theme background and text colors */
+    --ifm-background-color: #ffffff !important;
+    /* --ifm-background-surface-color: #ffffff !important; */
+    color-scheme: light !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+
+  }
+
+  /* Remove old color overrides */
+  /* p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  div,
+  td,
+  th,
+  li {
+    color: inherit !important;
+  } */
+
+  .preview-section {
+    margin-top: 0px !important;
+  }
+
+  footer {
+    display: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .hidden-on-web {
+    display: block !important;
+  }
+
+  /* Remove button from print view */
+  button,
+  .preview-button {
+    display: none !important;
+  }
+
+  /* Hide toast messages when printing */
+  [role="status"],
+  .toaster,
+  [data-sonner-toaster],
+  [data-radix-toast-viewport],
+  .toast-container {
+    display: none !important;
+  }
+
+  @page {
+    margin: 5mm;
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+  /* Fix first page top margin issue */
+  .khata-group:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Add padding after khata-table */
+  /* .khata-table {
+    margin-bottom: 20px !important;
+    padding-bottom: 10px !important;
+  } */
+
+  /* Remove floating effect and background for preview section */
+  /* .glass-panel, */
+  .card,
+  .motion-div {
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .khata-group {
+    page-break-after: always;
+    margin-bottom: 0px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .khata-group:last-child {
+    page-break-after: auto;
+  }
+
+  .telugu-header-print {
+    display: block;
+    text-align: left;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+
+  .telugu-header-print h3:first-of-type {
+
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .telugu-header-print h3 {
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .telugu-header-print p {
+    margin: 0px;
+    text-align: left;
+    font-weight: normal;
+  }
+
+
+
+  /* .page-footer {
+    margin-top: auto;
+  } */
+
+  .footer-signature-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0px !important;
+  }
+
+  .left-column {
+    text-align: left;
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align text to the left in a column */
+    width: 250px;
+    /* Adjust the width as needed */
+  }
+
+  .body-footer-text {
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+  }
+
+
+  /* Table column width settings for print */
+  /* .khata-table.print-table colgroup {
+    display: table-column-group !important;
+  }
+
+  .khata-table.print-table col:nth-child(1) {
+    width: 60px !important;
+  }
+
+  .khata-table.print-table col:nth-child(2) {
+    width: 10px !important;
+  }
+
+  .khata-table.print-table col:nth-child(5) {
+    width: 110px !important;
+  }
+
+  .khata-table.print-table col:last-child {
+    width: 120px !important;
+  } */
+
+  .khata-table.print-table td,
+  .khata-table.print-table th {
+
+    word-break: normal;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* .khata-table th,
+  .khata-table td {
+    border: 1x solid black !important;
+  } */
+
+  [class^="mt-8"] {
+    margin: 0rem !important;
+  }
+
+  .p-4 {
+    padding: 0rem !important;
+  }
+
+  .container {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .khata-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+    /* margin-bottom: 20px !important; */
+    /* padding-bottom: 10px !important; */
+  }
+
+  .signature-column {
+    width: 250px !important;
+
+  }
+
+  /* .signature-column {
+      width: 150px;
+    } */
+
+
+  /* Hide glass-panel elements when printing */
+  .glass-panel,
+  .card,
+  .motion-div,
+  .table-container {
+    border: none !important;
+    box-shadow: none !important;
+    margin-top: 0px !important;
+  }
+
+}
+
+/* Hide elements on web but show in print */
+.hidden-on-web {
+  display: none;
+}
+
+/* Custom form styling */
+.form-input {
+  @apply transition-all duration-200 ease-in-out;
+  @apply focus:ring-2 focus:ring-primary/20 focus:border-primary;
+}
+
+/* Custom animations */
+.content-transition {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Telugu text */
+.teluguText,
+.telugu-text,
+.khata-table {
+  font-family: 'Gautami', 'Noto Sans Telugu', sans-serif;
+}
+
+/* 
+::global(.telugu-text) {
+  font-family: 'Noto Sans Telugu', sans-serif;
+} */
+
+.font-gautami {
+  font-family: 'Gautami', 'Noto Sans Telugu', sans-serif;
+}
+
+/* Footer layout */
+.footer-signature-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.left-column {
+  text-align: left;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Align text to the left in a column */
+  width: 250px;
+  /* Adjust the width as needed */
+}
+
+.body-footer-text {
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+}
+
+/* Additional styles for PDF export */
+.khata-table th,
+.khata-table td {
+  border: 1px solid black !important;
+  padding: 8px;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+
+
+/* .khata-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  table-layout: fixed;
+} */
+
+/* Floating sticky print button styling */
+.fixed-print-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .fixed-print-button {
+    display: block;
+  }
+}
+
+/* Make sure the print-table handles column widths properly */
+.print-table colgroup {
+  display: table-column-group;
+}
+
+.print-table col {
+  display: table-column;
+}
+
+@layer utilities {
+  .markdown h1:first-child {
+    --ifm-h1-font-size: 2rem;
+  }
+
+  .blog-tags b {
+    @apply hidden;
+  }
+}
+
+a[class^='footerLogoLink_'] {
+  opacity: 1;
+}
+
+/* Custom CSS that should always be included */
+.navbar__item svg,
+.menu__link svg,
+.footer__link-item svg {
+  display: none;
+}
+
+.header-github-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background-color: var(--ifm-navbar-link-color);
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+  transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.header-github-link:hover::before {
+  background-color: var(--ifm-navbar-link-hover-color);
+}
+
+/*  Keyboard search keys */
+kbd {
+  &[class^='searchHint_'] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--docsearch-key-gradient);
+    border: 0;
+    border-radius: 3px;
+    box-shadow: var(--docsearch-key-shadow);
+    color: var(--docsearch-muted-color);
+    height: 20px;
+    margin-right: 0.4em;
+    padding: 0 7px 2px;
+  }
+
+  &.searchHint_btn {
+    display: inline-block;
+    align-items: unset;
+    justify-content: unset;
+    height: unset;
+    margin-left: 0.4rem;
+    padding: 4px 10px;
+  }
+}
+
+/* Search navbar (local search) */
+.navbar__search-input {
+  padding: 0 2rem 0 2.25rem;
+  width: 13.5rem;
+}
+
+code[class^='codeBlockLines_'] {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+div[class^='docItemContainer_'] article img {
+  display: block;
+  margin: auto;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+[class^='title_'] {
+  font-size: 2.3rem !important;
+}
+
+#__blog-post-container img[class^='img_'] {
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+
+  /* Search navbar local */
+  .navbar__search-input {
+    width: 14rem;
+    padding: 0 0.5rem 0 2.25rem;
+  }
+}
+
+/* table {
+  width: 100%;
+  border-collapse: collapse; */
+/* margin: 20px 0; */
+/* font-size: 16px; */
+/* text-align: left;
+  display: table; */
+/* background-color: transparent;
+
+} */
+
+/* 
+th,
+td {
+  padding: 12px;
+  border-width: 2px;
+
+  background-color: transparent;
+
+  color: inherit;
+ 
+} */
+
+tr {
+  background-color: transparent;
+  border: 0px;
+  /* Ensure no alternate row colors */
+}
+
+caption {
+  margin-top: 10px;
+  font-style: italic;
+  color: #0fcd32;
+}
+
+:root {
+  --ifm-table-border-width: 0px;
+  /* --ifm-table-border-color: transparent; */
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: transparent;
+}
+
+/* Ensure all tables follow the no-border, no-background style */
+/* article table, */
+/* article table th,
+article table td,
+.table-container table,
+.table-container th,
+.table-container td {
+  border: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  padding: 12px;
+} */
+table thead tr {
+  border-bottom: 0.8px solid #000000;
+}
+
+/* khata-table border color when it was dark mode  */
+[data-theme='dark'] .khata-table th,
+[data-theme='dark'] .khata-table td {
+  border: 1px solid var(--khata-border) !important;
+  padding: 8px;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
