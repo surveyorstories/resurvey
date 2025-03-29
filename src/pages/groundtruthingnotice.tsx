@@ -8,6 +8,7 @@ import { toast } from '../components/ui/use-toast'
 import { Button } from '../components/ui/button'
 import { Printer } from 'lucide-react'
 import Layout from '@theme/Layout'
+import { Toaster } from '../components/ui/toaster'
 
 function Index() {
   // Form state
@@ -59,7 +60,7 @@ function Index() {
   }
 
   return (
-    <Layout title="Resurvey Notice Generator" description="Generate Resurvey Notices with ease.">
+    <Layout title='Resurvey Notice Generator' description='Generate Resurvey Notices with ease.'>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -95,14 +96,16 @@ function Index() {
               officerName={officerName}
               setOfficerName={setOfficerName}
               officerDesignation={officerDesignation}
-              setOfficerDesignation={setOfficerDesignation} />
+              setOfficerDesignation={setOfficerDesignation}
+            />
 
             <MappingTable
               headers={headers}
               show={showMapping}
               onMappingSubmit={handleMappingSubmit}
               onPreview={() => setShowPreview(true)}
-              noticeType={noticeType} />
+              noticeType={noticeType}
+            />
 
             <PreviewSection
               districtName={districtName}
@@ -119,7 +122,8 @@ function Index() {
               mapping={mapping}
               noticeType={noticeType}
               officerName={officerName}
-              officerDesignation={officerDesignation} />
+              officerDesignation={officerDesignation}
+            />
           </div>
         </div>
 
@@ -134,7 +138,9 @@ function Index() {
             </Button>
           </div>
         )}
-      </motion.div> </Layout>
+      </motion.div>
+      <Toaster />
+    </Layout>
   )
 }
 

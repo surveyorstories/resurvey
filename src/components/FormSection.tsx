@@ -15,6 +15,7 @@ import {
 } from '../components/ui/select'
 import { districts } from '../data/districts'
 import { sanitizeString, sanitizeCSVData } from '../lib/sanitize'
+import { toast } from '../components/ui/use-toast'
 
 interface FormSectionProps {
   onFileUpload: (headers: string[], data: string[][]) => void
@@ -297,11 +298,10 @@ const FormSection: React.FC<FormSectionProps> = ({
             <div className='pt-4'>
               <h2 className='mb-4 text-2xl font-medium'>Upload CSV File</h2>
               <div
-                className={`rounded-lg border-2 border-dashed p-6 text-center transition-all ${
-                  isDragging
+                className={`rounded-lg border-2 border-dashed p-6 text-center transition-all ${isDragging
                     ? 'border-primary bg-primary/5'
                     : 'border-gray-300 hover:border-primary/50'
-                }`}
+                  }`}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
