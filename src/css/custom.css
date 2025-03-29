@@ -330,12 +330,12 @@ table {
     /* --ifm-background-surface-color: #ffffff !important; */
     color-scheme: light !important;
   }
-
+/* 
   body {
     margin: 0;
     padding: 0;
 
-  }
+  } */
 
   /* Remove old color overrides */
   /* p,
@@ -385,7 +385,7 @@ table {
   }
 
   @page {
-    margin: 5mm;
+    margin: 3% 6%;
     border: 1px solid black;
     padding: 8px;
   }
